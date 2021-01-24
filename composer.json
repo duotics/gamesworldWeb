@@ -1,0 +1,16 @@
+{
+    "name": "dbane/gamesworld-web",
+    "description": "gamer website",
+    "type": "project",
+    "require": {
+        "twbs/bootstrap": "dev-main"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Banegas",
+            "email": "dbanegasl@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
