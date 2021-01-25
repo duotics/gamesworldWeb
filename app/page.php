@@ -17,19 +17,17 @@ $tRSlg = mysqli_num_rows($RSlg);
 $body['bg']=$row['bg'];
 include(RAIZf.'head.php') ?>
 <div class="container mb-4">
-    <div class="p-4 mb-2">
-        <div class="text-center">
-            <img src="<?php echo $RAIZd.'logos/'.$row['logo'] ?>" alt="" style="height:400px;" class="img-fluid">
+    <div class="p-4">
+        <div class="text-center mb-2">
+            <img src="<?php echo $RAIZd.'logos/'.$row['logo'] ?>" alt="" style="height:275px;" class="img-fluid">
         </div>
-    </div>
-    <div mb-4>
-        
+        <h5 class="text-center text-white mt-4 mb-0"><?php echo $row['name'] ?></h5>
     </div>
 </div>
 <div class="container-fluid bg-white p-4">
 <div class="text-center">
         <?php do{ ?>
-        <a href="<?php echo $dRSln['url'] ?>" class="btn btn-<?php echo $dRSln['css'] ?> m-4" style="background:<?php echo $dRSln['color'] ?>" target="black">
+        <a href="<?php echo $dRSln['url'] ?>" class="btn btn-<?php echo $dRSln['css'] ?> m-2" style="background:<?php echo $dRSln['color'] ?>" target="black">
             <i class="<?php echo $dRSln['icon'] ?> fa-2x"></i><br>
             <?php echo $dRSln['username'] ?>
         </a>
