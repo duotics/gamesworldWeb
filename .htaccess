@@ -1,0 +1,11 @@
+# Activar RewriteEngine
+RewriteEngine on
+
+#RewriteCond %{SERVER_PORT} 80
+
+#RewriteBase /
+#DOWNLOAD
+#RewriteRule ^/(.+)/?$ app/page.php?url=$1
+#RewriteRule ^/(.+)?$ app/page.php?url=$1
+
+RewriteRule ^([a-zA-Z0-9]+)$ app/page.php?url=$1

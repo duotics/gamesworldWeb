@@ -1,6 +1,9 @@
 <?php 
-//require('init.php'); 
-require_once('vendor/autoload.php');
-?>
-
-hellow
+require "vendor/autoload.php";
+//require('init.php') ?>
+<div class="divb">
+    HOLA
+</div>
+<div class="diva">
+    ADIOS
+</div>

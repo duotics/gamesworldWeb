@@ -1,7 +1,5 @@
-<?php //require('../init.php');
-
-require_once('../vendor/autoload.php');
-
+<?php require('../init.php');
+//require_once('../vendor/autoload.php');
 if($_REQUEST['name']) $name=$_REQUEST['name'];
 ?>
 
