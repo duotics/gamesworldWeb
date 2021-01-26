@@ -32,7 +32,6 @@ $tRSlp = mysqli_num_rows($RSlp);
 $body['tit']=$row['name'];
 $body['bg']=$row['bg'];
 include(RAIZf.'head.php') ?>
-<<<<<<< HEAD
 <div class="container mb-2">
     <div class="p-4 mb-2 text-center">
         <div class="text-center mb-4 mt-2">
@@ -40,12 +39,10 @@ include(RAIZf.'head.php') ?>
         </div>
         <div class="text-center mt-4 mb-0">
             <span class="btn btn-secondary"><?php echo $row['name'] ?> <a href="#"><span class="ml-2 flag-icon flag-icon-<?php echo $row['pais'] ?>"></span></a></span>
-=======
 <div class="container mb-4">
     <div class="p-4">
         <div class="text-center mb-2">
             <img src="<?php echo $RAIZd.'logos/'.$row['logo'] ?>" alt="" style="height:275px;" class="img-fluid">
->>>>>>> 4e3add3569d8c40176a08173e25556f5925ef387
         </div>
         <h5 class="text-center text-white mt-4 mb-0"><?php echo $row['name'] ?></h5>
     </div>
@@ -54,20 +51,10 @@ include(RAIZf.'head.php') ?>
 <div class="text-center">
         <?php //$varDelay=null; ?>
         <?php do{ ?>
-<<<<<<< HEAD
-        <span class="btn-sec-soc">
-            <a href="<?php echo $dRSln['url'] ?>" class="btn btn-<?php echo $dRSln['css'] ?> m-4 animate__animated animate__backInUp animate__delay-1s" style="background:<?php echo $dRSln['color'] ?>" target="black">
-                <i class="<?php echo $dRSln['icon'] ?> fa-2x"></i><br>
-                <?php echo $dRSln['username'] ?>
-            </a>
-        </span>
-        <?php //$varDelay.=" animate__delay-1s " ?>
-=======
         <a href="<?php echo $dRSln['url'] ?>" class="btn btn-<?php echo $dRSln['css'] ?> m-2" style="background:<?php echo $dRSln['color'] ?>" target="black">
             <i class="<?php echo $dRSln['icon'] ?> fa-2x"></i><br>
             <?php echo $dRSln['username'] ?>
         </a>
->>>>>>> 4e3add3569d8c40176a08173e25556f5925ef387
         <?php }while($dRSln = mysqli_fetch_assoc($RSln)); ?>
         </div>
 </div>
