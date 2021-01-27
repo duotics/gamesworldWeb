@@ -1,78 +1,54 @@
-<?php require('../init.php');
-if($_REQUEST['url']) $url=$_REQUEST['url'];
-$row=detRow('tbl_profile','url',$url);
-
-$qlN=sprintf("SELECT * FROM tbl_network WHERE idp=%s AND tip=%s  ORDER BY ord ASC",
-SSQL($row['idp'],'int'),
-SSQL('s','text'));
-//echo $qlN;
-$RSln = mysqli_query($conn,$qlN) or die(mysqli_error($conn));
-$dRSln = mysqli_fetch_assoc($RSln);
-$tRSln = mysqli_num_rows($RSln);
-
-$qlD=sprintf("SELECT * FROM tbl_network WHERE idp=%s AND tip=%s ORDER BY ord ASC",
-SSQL($row['idp'],'int'),
-SSQL('d','text'));
-$RSld = mysqli_query($conn,$qlD) or die(mysqli_error($conn));
-$dRSld = mysqli_fetch_assoc($RSld);
-$tRSld = mysqli_num_rows($RSld);
-
-$qlG=sprintf("SELECT * FROM tbl_profile_game WHERE idp=%s",
-SSQL($row['idp'],'int'));
-$RSlg = mysqli_query($conn,$qlG) or die(mysqli_error($conn));
-$dRSlg = mysqli_fetch_assoc($RSlg);
-$tRSlg = mysqli_num_rows($RSlg);
-
-$qlP=sprintf("SELECT * FROM tbl_post WHERE idp=%s",
-SSQL($row['idp'],'int'));
-$RSlp = mysqli_query($conn,$qlP) or die(mysqli_error($conn));
-$dRSlp = mysqli_fetch_assoc($RSlp);
-$tRSlp = mysqli_num_rows($RSlp);
-
+<?php require('../../init.php');
+include('page.fnc.php');
 $body['tit']=$row['name'];
 $body['bg']=$row['bg'];
 include(RAIZf.'head.php') ?>
+
+<?php if($view){ ?>
+<!--TOP-->
 <div class="container mb-2">
-    <div class="p-4 mb-2 text-center">
-        <div class="text-center mb-4 mt-2">
-            <img src="<?php echo $RAIZd.'logos/'.$row['logo'] ?>" alt="" style="height:300px;" class="cont-logo-main img-fluid animate__animated animate__heartBeat">
+    <div class="p-4 text-center">
+        <div class="text-center mb-5 mt-2">
+            <img src="<?php echo $RAIZd.'logos/'.$row['logo'] ?>" alt="" style="" class="<?php echo $row['logo-css'] ?> cont-logo-main img-fluid animate__animated animate__heartBeat">
         </div>
-        <div class="text-center mt-4 mb-0">
-            <span class="btn btn-secondary"><?php echo $row['name'] ?> <a href="#"><span class="ml-2 flag-icon flag-icon-<?php echo $row['pais'] ?>"></span></a></span>
-<div class="container mb-4">
-    <div class="p-4">
         <div class="text-center mb-2">
-            <img src="<?php echo $RAIZd.'logos/'.$row['logo'] ?>" alt="" style="height:275px;" class="img-fluid">
+            <span class="btn btn-secondary"><?php echo $row['name'] ?> <a href="#"><span class="ml-2 flag-icon flag-icon-<?php echo $row['pais'] ?>"></span></a></span>
         </div>
-        <h5 class="text-center text-white mt-4 mb-0"><?php echo $row['name'] ?></h5>
     </div>
 </div>
+<!--NETWORKS LIST-->
 <div class="container-fluid bg-white p-4">
-<div class="text-center">
-        <?php //$varDelay=null; ?>
+    <div class="text-center animate__animated animate__backInUp animate__delay-1s">
         <?php do{ ?>
-        <a href="<?php echo $dRSln['url'] ?>" class="btn btn-<?php echo $dRSln['css'] ?> m-2" style="background:<?php echo $dRSln['color'] ?>" target="black">
+        <span class="btn-sec-soc m-3">
+        <a href="<?php echo $dRSln['url'] ?>" class="btn btn-<?php echo $dRSln['css'] ?> btn-lg" style="background:<?php echo $dRSln['color'] ?>" target="black">
             <i class="<?php echo $dRSln['icon'] ?> fa-2x"></i><br>
             <?php echo $dRSln['username'] ?>
         </a>
+        </span>
         <?php }while($dRSln = mysqli_fetch_assoc($RSln)); ?>
-        </div>
+    </div>
 </div>
-
+<!--CONTENT-->
 <div class="container mt-5 mb-5">
     <div class="row">
+        <!--GAMES SECTION-->
         <div class="col-xs-6 col-sm-4 col-md-2 mb-2 animate__animated animate__backInLeft animate__delay-2s">
             <div class="card">
                 <h4 class="card-header">JUEGOS</h4>
                 <div class="card-body">
-                    <table class="table table-sm">
+                    <table class="table table-sm table-borderless mb-0">
                     <?php do{ ?>
                     <?php $dG=detRow('tbl_games','idg',$dRSlg['idg']) ?>
                         <tr>
                             <td class="text-center">
-                            <a href="#">
-                                <img src="<?php echo $RAIZd.'games/'.$dG['img'] ?>" alt="" class="img-fluid rounded">
-                                <span class="small"><?php echo $dG['name'] ?></span>
+                            <a href="#"  class="cont-game">
+                                <div class="card">
+                                <img src="<?php echo $RAIZd.'games/'.$dG['img'] ?>" class="card-img-top" alt="...">
+                                <div class="card-body bg-dark text-light p-2">
+                                    <?php echo $dG['name'] ?>
+                                </div>
+                                </div>
                             </a>
                             </td>
                         </tr>
@@ -81,12 +57,12 @@ include(RAIZf.'head.php') ?>
                 </div>
             </div>
         </div>
+        <!--POST SECTION-->
         <div class="col-xs-6 col-sm-8 col-md-10 mb-2 animate__animated animate__backInRight animate__delay-2s">
-            
             <div class="card">
                 <div class="card-body">
                 <?php do{ ?>
-                <div class="card">
+                <div class="card mb-2">
                     <?php if($dRSlp['tit']){ ?>
                     <h4 class="card-header"><?php echo $dRSlp['tit'] ?></h4>
                         <?php } ?>
@@ -100,26 +76,26 @@ include(RAIZf.'head.php') ?>
         </div>
     </div>
 </div>
-
+<!--APOYO CREATOR-->
 <div class="bg-white p-5">
     <div class="container">
         <h1 class="display-5">Formas de apoyar al creador</h1>
         
         <div class="text-center animate__animated animate__backInUp animate__delay-1s">
-        <?php //$varDelay=null; ?>
         <?php do{ ?>
+        <span class="btn-sec-soc">
         <a href="<?php echo $dRSld['url'] ?>" class="btn btn-<?php echo $dRSld['css'] ?> m-4" style="background:<?php echo $dRSld['color'] ?>" target="black">
             <i class="<?php echo $dRSld['icon'] ?> fa-2x"></i><br>
             <?php echo $dRSld['username'] ?>
         </a>
-        <?php //$varDelay.=" animate__delay-1s " ?>
+        </span>
         <?php }while($dRSld = mysqli_fetch_assoc($RSld)); ?>
         </div>
         </div>
         
     </div>
 </div>
-
+<!--BOTTOM-->
 <div class="bg-dark text-light pt-5 pb-5">
     <div class="container">
             <div class="row">
@@ -158,5 +134,11 @@ include(RAIZf.'head.php') ?>
     <a class="navbar-brand" href="#"><?php echo $row['name'] ?> ® 2021</a>
   </div>
 </nav>
-
+<?php }else{ ?>
+    <div class="container pt-4 pb-4">
+        <div class="alert alert-warning">
+            <h4 class="text-center">No existe el usuario que buscas</h4>
+        </div>
+    </div>
+<?php } ?>
 <?php include(RAIZf.'foot.php') ?>

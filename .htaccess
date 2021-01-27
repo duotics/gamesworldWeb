@@ -8,4 +8,4 @@ RewriteEngine on
 #RewriteRule ^/(.+)/?$ app/page.php?url=$1
 #RewriteRule ^/(.+)?$ app/page.php?url=$1
 
-RewriteRule ^([a-zA-Z0-9]+)$ app/page.php?url=$1
+RewriteRule ^([a-zA-Z0-9]+)$ app/page/page.php?url=$1
