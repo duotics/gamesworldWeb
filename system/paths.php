@@ -1,6 +1,6 @@
 <?php
 $folderBase='/'; //Remoto. '/'; Local. '/Folder/' (Folder in www)
-$folderCont=''; //Folder if system is in subdirectory; to local "foldername/" | in remote can be empty ""
+$folderCont='gamesworldWeb/'; //Folder if system is in subdirectory; to local "foldername/" | in remote can be empty ""
 $serverRoot=$_SERVER['DOCUMENT_ROOT'];
 $hostType=$_SERVER['HTTP_HOST']; //Remoto. 'www.'; Local. 'localhost/'
 if (isset($_SERVER['HTTPS'])) $protocolS='https';
