@@ -5,4 +5,6 @@ include(RAIZs."confs.php");
 include(RAIZs."conn/conn.php");
 //include(RAIZs."lang.php");
 include(RAIZs."fncts.php");
+$body['tit']=null;
+$body['bg']=null;
 ?>
