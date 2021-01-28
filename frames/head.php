@@ -20,4 +20,4 @@
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v9.0&appId=599041136773457&autoLogAppEvents=1" nonce="fwgIuuZB"></script>
 </head>
-<body style="background: url(../data/bgs/<?php echo $body['bg'] ?>) repeat center center; background-attachment: fixed;">
+<body>
