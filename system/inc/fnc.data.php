@@ -1,4 +1,13 @@
 <?php
+function getBtnNetwork($dN,$css=null){
+	$btn=null;
+	$btn='<a href="'.$dN['url'].'" class="btn btn-'.$dN['css'].' '.$css.' btn-lg" style="background:'.$dN['color'].'" target="black">
+	<i class="'.$dN['icon'].' fa-2x"></i><br>';
+	$btn.=$dN['username'];
+	$btn.='</a>';
+	return $btn;
+}
+
 function updHits($table,$fieldHits,$fieldId,$val){//v.1.2
 	global $conn;
 	$ret=NULL;

@@ -4,8 +4,8 @@ RewriteEngine on
 #RewriteCond %{SERVER_PORT} 80
 
 #RewriteBase /
-#DOWNLOAD
-#RewriteRule ^/(.+)/?$ app/page.php?url=$1
-#RewriteRule ^/(.+)?$ app/page.php?url=$1
-
+#Profile
 RewriteRule ^([a-zA-Z0-9]+)$ app/page/page.php?url=$1
+#Game
+RewriteRule ^game/(.+)/?$ app/game/gamed.php?game=$1
+RewriteRule ^game/(.+)?$ app/game/gamed.php?game=$1

@@ -5,7 +5,9 @@ if($url){
     $row=detRow('tbl_profile','url',$url);
     if($row){
         $view=TRUE;
-        $qlN=sprintf("SELECT * FROM tbl_network WHERE idp=%s AND tip=%s  ORDER BY ord ASC",
+        $qlN=sprintf("SELECT * FROM tbl_network 
+        INNER JOIN tbl_network_tip ON tbl_network.idnt=tbl_network_tip.idnt
+        WHERE idp=%s AND tipo=%s  ORDER BY ord ASC",
         SSQL($row['idp'],'int'),
         SSQL('s','text'));
         //echo $qlN;
@@ -13,7 +15,9 @@ if($url){
         $dRSln = mysqli_fetch_assoc($RSln);
         $tRSln = mysqli_num_rows($RSln);
 
-        $qlD=sprintf("SELECT * FROM tbl_network WHERE idp=%s AND tip=%s ORDER BY ord ASC",
+        $qlD=sprintf("SELECT * FROM tbl_network 
+        INNER JOIN tbl_network_tip ON tbl_network.idnt=tbl_network_tip.idnt
+        WHERE idp=%s AND tipo=%s  ORDER BY ord ASC",
         SSQL($row['idp'],'int'),
         SSQL('d','text'));
         $RSld = mysqli_query($conn,$qlD) or die(mysqli_error($conn));

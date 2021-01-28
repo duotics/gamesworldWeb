@@ -12,7 +12,8 @@ include(RAIZf.'head.php') ?>
             <img src="<?php echo $RAIZd.'logos/'.$row['logo'] ?>" alt="" style="" class="<?php echo $row['logo-css'] ?> cont-logo-main img-fluid animate__animated animate__heartBeat">
         </div>
         <div class="text-center mb-2">
-            <span class="btn btn-secondary"><?php echo $row['name'] ?> <a href="#"><span class="ml-2 flag-icon flag-icon-<?php echo $row['pais'] ?>"></span></a></span>
+        <span class="btn btn-secondary">Creador Contenido</span>    
+        <span class="btn btn-light"><?php echo $row['name'] ?> <a href="#"><span class="ml-2 flag-icon flag-icon-<?php echo $row['pais'] ?>"></span></a></span>
         </div>
     </div>
 </div>
@@ -21,10 +22,7 @@ include(RAIZf.'head.php') ?>
     <div class="text-center animate__animated animate__backInUp animate__delay-1s">
         <?php do{ ?>
         <span class="btn-sec-soc m-3">
-        <a href="<?php echo $dRSln['url'] ?>" class="btn btn-<?php echo $dRSln['css'] ?> btn-lg" style="background:<?php echo $dRSln['color'] ?>" target="black">
-            <i class="<?php echo $dRSln['icon'] ?> fa-2x"></i><br>
-            <?php echo $dRSln['username'] ?>
-        </a>
+            <?php echo getBtnNetwork($dRSln); ?>
         </span>
         <?php }while($dRSln = mysqli_fetch_assoc($RSln)); ?>
     </div>
@@ -42,7 +40,7 @@ include(RAIZf.'head.php') ?>
                     <?php $dG=detRow('tbl_games','idg',$dRSlg['idg']) ?>
                         <tr>
                             <td class="text-center">
-                            <a href="#"  class="cont-game">
+                            <a href="<?php echo $RAIZ ?>game/<?php echo $dG['url'] ?>"  class="cont-game">
                                 <div class="card">
                                 <img src="<?php echo $RAIZd.'games/'.$dG['img'] ?>" class="card-img-top" alt="...">
                                 <div class="card-body bg-dark text-light p-2">
@@ -84,10 +82,7 @@ include(RAIZf.'head.php') ?>
         <div class="text-center animate__animated animate__backInUp animate__delay-1s">
         <?php do{ ?>
         <span class="btn-sec-soc">
-        <a href="<?php echo $dRSld['url'] ?>" class="btn btn-<?php echo $dRSld['css'] ?> m-4" style="background:<?php echo $dRSld['color'] ?>" target="black">
-            <i class="<?php echo $dRSld['icon'] ?> fa-2x"></i><br>
-            <?php echo $dRSld['username'] ?>
-        </a>
+        <?php echo getBtnNetwork($dRSld,'m-4'); ?>
         </span>
         <?php }while($dRSld = mysqli_fetch_assoc($RSld)); ?>
         </div>
