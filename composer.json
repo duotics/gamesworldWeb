@@ -4,6 +4,10 @@
     "version": "0.1",
     "require": {
         "twbs/bootstrap": "^4.6",
-        "fortawesome/font-awesome": "^5.15"
+        "fortawesome/font-awesome": "^5.15",
+        "components/flag-icon-css": "^3.5"
+    },
+    "config": {
+    	"optimize-autoloader": true
     }
 }
