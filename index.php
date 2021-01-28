@@ -1,7 +1,7 @@
 <?php 
-require "vendor/autoload.php";
-//require('init.php') ?>
-<div class="divb">
+require __DIR__ . '/vendor/autoload.php';
+?>
+<div class="container">
     HOLA
 </div>
 <div class="diva">
