@@ -1,4 +1,14 @@
 <?php
+
+function getBtnGame($dG,$css=null){
+	$btn=null;
+	$btn='<a href="'.$GLOBALS['RAIZ'].'game/'.$dG['url'].'"  class="cont-game">
+	<div class="card">';
+	$btn.='<img src="'.$GLOBALS['RAIZd'].'games/'.$dG['img'].'" class="card-img-top" alt="...">';
+	$btn.='<div class="card-body bg-dark text-light p-2">'.$dG['name'].'</div></div></a>';
+	return $btn;
+}
+
 function getBtnNetwork($dN,$css=null){
 	$btn=null;
 	$btn='<a href="'.$dN['url'].'" class="btn btn-'.$dN['css'].' '.$css.' btn-lg" style="background:'.$dN['color'].'" target="black">
@@ -52,7 +62,7 @@ function updHitsH($paramRef,$paramSec){//v.0.1
 			array("cond"=>"AND","field"=>"date","comp"=>"=","val"=>$dateYM),
 			array("cond"=>"AND","field"=>"ip","comp"=>'=',"val"=>$user_ip)
 		);//CONDICIONES CAMPO URL e ID tabla
-		$dHitExist=detRowNP('db_hits',$paramsN);
+		$dHitExist=detRowNP('tbl_hits',$paramsN);
 		if($dHitExist){
 			$minTrans=minutosTranscurridos($dHitExist['last'],$dateTimeNow);
 			if($minTrans>0){
@@ -63,7 +73,7 @@ function updHitsH($paramRef,$paramSec){//v.0.1
 		}
 		//var_dump($dHitExist);
 		if($pHits){
-			$qry=sprintf('INSERT INTO db_hits (ref, sec, date, ip, last, obs, hits) VALUES (%s, %s, %s, %s, %s, %s, 1)
+			$qry=sprintf('INSERT INTO tbl_hits (ref, sec, date, ip, last, obs, hits) VALUES (%s, %s, %s, %s, %s, %s, 1)
 			ON DUPLICATE KEY UPDATE hits = hits+1, ip=%s, last=%s, obs=%s',
 			SSQL($paramRef,'int'),
 			SSQL($paramSec,'text'),
