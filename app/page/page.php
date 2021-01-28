@@ -10,12 +10,13 @@ $body['bg']=$row['bg'];
 body{
     background: url(<?php echo $RAIZd."bgs/".$body['bg'] ?>) repeat center center; 
     background-attachment: fixed;
+    background-size: cover;
 }
 </style>
 <!--TOP-->
 <?php include('page-top.php')?>
 <!--NETWORKS LIST-->
-<div class="container-fluid bg-white p-4">
+<div class="container-fluid bg-white p-4" style="background-color: rgba(255, 255, 255, 0.85) !important;">
     <div class="text-center animate__animated animate__backInUp animate__delay-1s">
         <?php do{ ?>
         <span class="btn-sec-soc m-3">
