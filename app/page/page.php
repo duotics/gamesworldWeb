@@ -4,6 +4,7 @@ $body['tit']=$row['name'];
 $body['bg']=$row['bg'];
 ?>
 <?php include(RAIZf.'head.php') ?>
+<?php include(RAIZf.'nav.php') ?>
 <?php if($view){ ?>
 <?php $hitsS=updHitsH($row['idp'],'pr'); ?>
 <style>

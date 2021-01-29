@@ -1,11 +1,23 @@
 # Activar RewriteEngine
 RewriteEngine on
 
-#RewriteCond %{SERVER_PORT} 80
+# INDEX
+RewriteRule ^index.php$ app/home/index.php [L]
 
-#RewriteBase /
-#Profile
+# PROFILE
+RewriteRule ^profile$ app/profile/profile.php [L]
+RewriteRule ^profile/$ app/profile/profile.php [L]
+
+# DIRECTORY CREATOR
+RewriteRule ^creators$ app/creator/creator.php [L]
+RewriteRule ^creators/$ app/creator/creator.php [L]
+RewriteRule ^creadores$ app/creator/creator.php [L]
+RewriteRule ^creadores/$ app/creator/creator.php [L]
+
+# PAGE CREATOR
 RewriteRule ^([a-zA-Z0-9]+)$ app/page/page.php?url=$1
-#Game
+RewriteRule ^([a-zA-Z0-9]+)/$ app/page/page.php?url=$1
+
+# PAGE GAME
 RewriteRule ^game/(.+)/?$ app/game/gamed.php?game=$1
 RewriteRule ^game/(.+)?$ app/game/gamed.php?game=$1

@@ -3,7 +3,7 @@
     "description": "Social Network Gamers",
     "version": "0.1",
     "require": {
-        "twbs/bootstrap": "^4.6",
+        "twbs/bootstrap": "^v5.0.0-beta1",
         "fortawesome/font-awesome": "^5.15",
         "components/flag-icon-css": "^3.5"
     },
