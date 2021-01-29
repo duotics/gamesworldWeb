@@ -4,6 +4,10 @@ RewriteEngine on
 # INDEX
 RewriteRule ^index.php$ app/home/index.php [L]
 
+# SEARCH
+RewriteRule ^search$ app/search/search.php [L]
+RewriteRule ^search/$ app/search/search.php [L]
+
 # PROFILE
 RewriteRule ^profile$ app/profile/profile.php [L]
 RewriteRule ^profile/$ app/profile/profile.php [L]
@@ -13,6 +17,22 @@ RewriteRule ^creators$ app/creator/creator.php [L]
 RewriteRule ^creators/$ app/creator/creator.php [L]
 RewriteRule ^creadores$ app/creator/creator.php [L]
 RewriteRule ^creadores/$ app/creator/creator.php [L]
+
+# DIRECTORY GAMES
+RewriteRule ^games$ app/game/game.php [L]
+RewriteRule ^games/$ app/game/game.php [L]
+RewriteRule ^videojuegos$ app/game/game.php [L]
+RewriteRule ^videojuegos/$ app/game/game.php [L]
+
+# DIRECTORY NETWORKS
+RewriteRule ^networks$ app/network/network.php [L]
+RewriteRule ^networks/$ app/network/network.php [L]
+RewriteRule ^redes$ app/network/network.php [L]
+RewriteRule ^redes/$ app/network/network.php [L]
+
+# SEARCH
+RewriteRule ^search/(.+)/?$ app/search/search.php?str=$1
+RewriteRule ^search/(.+)?$ app/search/search.php?str=$1
 
 # PAGE CREATOR
 RewriteRule ^([a-zA-Z0-9]+)$ app/page/page.php?url=$1

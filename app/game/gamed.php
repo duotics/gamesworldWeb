@@ -1,6 +1,7 @@
 <?php require('../../init.php');
 include('gamed.fnc.php');
 include(RAIZf.'head.php');
+require(RAIZf.'nav.php');
 ?>
 <?php if($view){?>
 <style>

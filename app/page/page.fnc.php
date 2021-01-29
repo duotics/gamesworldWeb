@@ -10,7 +10,6 @@ if($url){
         WHERE idp=%s AND tipo=%s  ORDER BY ord ASC",
         SSQL($row['idp'],'int'),
         SSQL('s','text'));
-        //echo $qlN;
         $RSln = mysqli_query($conn,$qlN) or die(mysqli_error($conn));
         $dRSln = mysqli_fetch_assoc($RSln);
         $tRSln = mysqli_num_rows($RSln);
