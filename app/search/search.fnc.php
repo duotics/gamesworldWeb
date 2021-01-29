@@ -1,5 +1,8 @@
 <?php 
 $str=null;
+$tRSss=null;
+$tRSsg=null;
+$tRt=null;
 if(isset($_REQUEST['str'])) $str=$_REQUEST['str'];
 if($str){
     $qSS=sprintf("SELECT * FROM tbl_profile WHERE name LIKE %s OR url LIKE %s OR rname LIKE %s",
@@ -16,5 +19,7 @@ if($str){
     $RSsg = mysqli_query($conn,$qSG) or die(mysqli_error($conn));
     $dRSsg = mysqli_fetch_assoc($RSsg);
     $tRSsg = mysqli_num_rows($RSsg);
+
+    $tRt=$tRSss+$tRSsg;
 }
 ?>

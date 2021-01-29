@@ -33,32 +33,38 @@ require(RAIZf.'nav.php');
 
 <div class="bg-white">
         <div class="container pt-4 pb-4">
-            <?php if($tRSsg>0){ ?>
-            <h3>Videojuegos</h3>
-            <div class="row row-cols-1 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-4">
-            <?php do{ ?>
-                <?php echo getBtnGame($dRSsg) ?>
-            <?php }while($dRSsg = mysqli_fetch_assoc($RSsg)); ?>
-            </div>
-            <?php } ?>
-            <hr>
-            <?php if($tRSss>0){ ?>
-            <h3>Streamers</h3>
-            <div class="row row-cols-1 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-4">
-            <?php do{ ?>
-            <?php $dS=detRow('tbl_profile','idp',$dRSss['idp']); ?>
-            <div class="col">
-            <a href="<?php echo $RAIZ.$dS['url'] ?>">
-                <div class="card h-100">
-                <img src="<?php echo $RAIZd.'logos/'.$dS['logo'] ?>" class="card-img-top img-streamer" alt="<?php echo $dS['name'] ?>">
-                <div class="card-body text-center">
-                    <p class="card-text"><?php echo $dS['name'] ?></p>
+            <?php if($tRt>0){ ?>
+                <?php if($tRSsg>0){ ?>
+                <h3>Videojuegos</h3>
+                <div class="row row-cols-1 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-4">
+                <?php do{ ?>
+                    <?php echo getBtnGame($dRSsg) ?>
+                <?php }while($dRSsg = mysqli_fetch_assoc($RSsg)); ?>
                 </div>
+                <hr>
+                <?php } ?>
+                <?php if($tRSss>0){ ?>
+                <h3>Streamers</h3>
+                <div class="row row-cols-1 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-4">
+                <?php do{ ?>
+                <?php $dS=detRow('tbl_profile','idp',$dRSss['idp']); ?>
+                <div class="col">
+                <a href="<?php echo $RAIZ.$dS['url'] ?>">
+                    <div class="card h-100">
+                    <img src="<?php echo $RAIZd.'logos/'.$dS['logo'] ?>" class="card-img-top img-streamer" alt="<?php echo $dS['name'] ?>">
+                    <div class="card-body text-center">
+                        <p class="card-text"><?php echo $dS['name'] ?></p>
+                    </div>
+                    </div>
+                    </a>
                 </div>
-                </a>
-            </div>
-            <?php }while($dRSss = mysqli_fetch_assoc($RSss)); ?>
-            </div>
+                <?php }while($dRSss = mysqli_fetch_assoc($RSss)); ?>
+                </div>
+                <?php } ?>
+            <?php }else{ ?>
+                <div class="alert">
+                    <h4>Sin Resultados</h4>
+                </div>
             <?php } ?>
         </div>
     </div>

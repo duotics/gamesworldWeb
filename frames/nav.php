@@ -7,13 +7,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="#">Creadores</a>
+          <a class="nav-link" href="<?php echo $RAIZ ?>creators/">Creadores</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Videojuegos</a>
+          <a class="nav-link" href="<?php echo $RAIZ ?>games/">Videojuegos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Redes</a>
+          <a class="nav-link" href="<?php echo $RAIZ ?>networks/">Redes</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -28,7 +28,7 @@
       </ul>
       <form class="d-flex" action="<?php echo $RAIZ ?>search/" method="post">
         <input class="form-control me-2" type="search" placeholder="buscar" aria-label="Search" name="str">
-        <button class="btn btn-outline-success" type="submit">Buscar</button>
+        <button class="btn btn-outline-primary" type="submit">Buscar</button>
       </form>
     </div>
   </div>
