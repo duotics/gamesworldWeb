@@ -12,10 +12,10 @@ require(RAIZf.'head.php') ?>
         font-weight: bold;
     }
     .home-content h2{
-
+        text-decoration: inherit;
     }
     .home-content h3{
-        
+        text-decoration: inherit;
     }
     .home-content-btn{
         padding: 30px 0 30px 0;
