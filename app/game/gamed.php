@@ -46,7 +46,7 @@ require(RAIZf.'nav.php');
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="<?php echo $RAIZ ?>">Home</a></li>
-    <li class="breadcrumb-item"><a href="<?php echo $RAIZ ?>game/">Videojuegos</a></li>
+    <li class="breadcrumb-item"><a href="<?php echo $RAIZ ?>games/">Videojuegos</a></li>
     <li class="breadcrumb-item active" aria-current="page"><?php echo $row['name'] ?></li>
   </ol>
 </nav>

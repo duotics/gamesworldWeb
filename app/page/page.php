@@ -34,6 +34,7 @@ body{
             <div class="card">
                 <h4 class="card-header">JUEGOS</h4>
                 <div class="card-body">
+                    <?php if($tRSlg>0){ ?>
                     <table class="table table-sm table-borderless mb-0">
                     <?php do{ ?>
                     <?php $dG=detRow('tbl_games','idg',$dRSlg['idg']) ?>
@@ -44,6 +45,7 @@ body{
                         </tr>
                         <?php }while($dRSlg = mysqli_fetch_assoc($RSlg)); ?>
                     </table>
+                    <?php } ?>
                 </div>
             </div>
         </div>

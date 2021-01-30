@@ -1,5 +1,12 @@
 <?php
 
+function getFecActFormat($format='d-m-Y',$time=null){
+	if($time==null) $time=time();
+	$transdate = date($format,$time);
+	$month = date($format, strtotime($transdate));
+	return $month;
+}
+
 function getBtnGame($dG,$css=null){
 	$btn=null;
 	$btn='<a href="'.$GLOBALS['RAIZ'].'game/'.$dG['url'].'"  class="cont-game">
@@ -114,6 +121,7 @@ function totRows($table,$field,$param){
 }
 function totRowsTab($table,$field=NULL,$param=NULL,$cond='='){//v.1.1
 	Global $conn;
+	$qryCond=null;
 	// $table -> Table database
 	// $field -> Campo cond
 	if(($field)&&($param)){

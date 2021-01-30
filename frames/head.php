@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="<?php echo $RAIZa ?>css/custom-v.0.2.css"/>
+    <link rel="stylesheet" href="<?php echo $RAIZa ?>css/custom-v.0.3.css"/>
     <!--JS-->
     <script src="<?php echo $RAIZa ?>js/jquery-3.5.1.min.js"></script>
     <script src="<?php echo $RAIZv ?>twbs/bootstrap/dist/js/bootstrap.min.js"></script>
