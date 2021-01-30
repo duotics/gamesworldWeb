@@ -50,7 +50,7 @@ require(RAIZf.'nav.php');
                 <?php $dS=detRow('tbl_profile','idp',$dRSss['idp']); ?>
                 <div class="col">
                 <a href="<?php echo $RAIZ.$dS['url'] ?>">
-                    <div class="card h-100">
+                    <div class="card h-100 cont-view-streamer">
                     <img src="<?php echo $RAIZd.'logos/'.$dS['logo'] ?>" class="card-img-top img-streamer" alt="<?php echo $dS['name'] ?>">
                     <div class="card-body text-center">
                         <p class="card-text"><?php echo $dS['name'] ?></p>
