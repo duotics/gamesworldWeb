@@ -5,29 +5,7 @@ require(RAIZf.'nav.php');
 ?>
 <?php if($view){?>
 <style>
-.game-head{
-    background-image: url(<?php echo $RAIZd."gamesbg/".$row['bg'] ?>); 
-    /* Background image is centered vertically and horizontally at all times */
-    background-position: center center;
-    /* Background image doesn't tile */
-    background-repeat: no-repeat;
-    /* Background image is fixed in the viewport so that it doesn't move when the content's height is greater than the image's height */
-    background-attachment: fixed;
-    /* This is what makes the background image rescale based on the container's size */
-    background-size: cover;
-    /* Set a background color that will be displayed while the background image is loading */
-    background-color: #eee;
-}
-.cont-streamer{
-    overflow:hidden;
-    background:#eee;
-}
-.img-streamer{
-    height:100%;
-    width:100%;
-    object-fit: cover;
-    
-}
+    .game-head{background-image: url(<?php echo $RAIZd."gamesbg/".$row['bg'] ?>);}
 </style>
 <div class="game-head">
     <?php $hitsS=updHitsH($row['idg'],'gm'); ?>
@@ -37,7 +15,7 @@ require(RAIZf.'nav.php');
             <img src="<?php echo $RAIZd ?>/games/<?php echo $row['img'] ?>" class="img-fluid img-thumbnail rounded" style="height:300px">
             </div>
             <div class="mb-2">
-            <a href="<?php echo $RAIZ ?>game/" class="btn btn-secondary btn-lg">Videojuego <i class="fas fa-gamepad"></i></a> <span class="btn btn-light btn-lg"><?php echo $row['name'] ?></span>
+            <a href="<?php echo $RAIZ ?>games/" class="btn btn-secondary btn-lg">Videojuego <i class="fas fa-gamepad"></i></a> <span class="btn btn-light btn-lg"><?php echo $row['name'] ?></span>
             </div>
         </div>
     </div>
