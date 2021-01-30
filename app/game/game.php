@@ -14,6 +14,4 @@ include(RAIZf.'nav.php'); ?>
 
     </div>
 </div>
-<?php
-require(RAIZf.'foot.php');
-?>
+<?php require(RAIZf.'foot.php'); ?>

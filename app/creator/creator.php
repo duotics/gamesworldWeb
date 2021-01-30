@@ -28,7 +28,13 @@ include(RAIZf.'nav.php'); ?>
 </style>
 <div class="container">
     <div class="pt-4 pb-4">
-    <h1>Creadores de Contenido Populares</h1>
+    <h1 class="mb-4">Creadores de Contenido Populares</h1>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            Filtros
+        </div>
+    </div>
 
     <div class="bg-white">
         <div class="container p-4">
@@ -36,7 +42,7 @@ include(RAIZf.'nav.php'); ?>
             <?php do{ ?>
             <div class="col">
             <a href="<?php echo $RAIZ.$dRSst['url'] ?>">
-                <div class="card h-100">
+                <div class="card h-100 cont-view-streamer">
                 <img src="<?php echo $RAIZd.'logos/'.$dRSst['logo'] ?>" class="card-img-top img-streamer" alt="<?php echo $dRSst['name'] ?>">
                 <div class="card-body text-center">
                     <p class="card-text"><?php echo $dRSst['name'] ?></p>
