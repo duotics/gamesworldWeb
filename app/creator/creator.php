@@ -1,16 +1,11 @@
 <?php require('../../init.php');
 include('creator.fnc.php');
+include('creator.css.php');
 include(RAIZf.'head.php');
 include(RAIZf.'nav.php'); ?>
-<style>
-.game-head{
-    background-image: url(<?php echo $RAIZd."gamesbg/".$row['bg'] ?>); 
-}
-</style>
 <div class="container">
     <div class="pt-4 pb-4">
     <h1 class="mb-4">Creadores de Contenido Populares</h1>
-
     <div class="card mb-4">
         <div class="card-body">
             Filtros
@@ -37,9 +32,6 @@ include(RAIZf.'nav.php'); ?>
             </div>
         </div>
     </div>
-
     </div>
 </div>
-<?php
-require(RAIZf.'foot.php');
-?>
+<?php require(RAIZf.'foot.php'); ?>
