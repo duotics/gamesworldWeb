@@ -29,7 +29,7 @@ if($url){
         $dRSlg = mysqli_fetch_assoc($RSlg);
         $tRSlg = mysqli_num_rows($RSlg);
 
-        $qlP=sprintf("SELECT * FROM tbl_post WHERE idp=%s",
+        $qlP=sprintf("SELECT * FROM tbl_post WHERE idp=%s ORDER BY id DESC",
         SSQL($row['idp'],'int'));
         $RSlp = mysqli_query($conn,$qlP) or die(mysqli_error($conn));
         $dRSlp = mysqli_fetch_assoc($RSlp);

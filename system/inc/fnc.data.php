@@ -150,8 +150,9 @@ function detRow($table,$field,$param,$foN=NULL, $foF='ASC'){//v2.0
 	mysqli_free_result($RS); return ($dRS);
 }
 /**/
-function detRowGSel($table,$fieldID,$fieldVal,$field,$param,$ord=FALSE,$valOrd=NULL,$ascdes='ASC'){//v1.2
+function detRowGSel($table,$fieldID,$fieldVal,$field,$param,$ord=FALSE,$valOrd=NULL,$ascdes='ASC'){//duotics_lib->v1.3
 	Global $conn;
+	$orderBy=null;//Param for ordering SQL rows
 	if($ord){
 		if(!($valOrd)) $orderBy='ORDER BY '.' sVAL '.$ascdes;
 		else $orderBy='ORDER BY '.$valOrd.' '.$ascdes;
@@ -204,15 +205,18 @@ function detRowO($table,$field,$param,$fieldo,$order){
 	$row_RS = mysqli_fetch_assoc($RS);
 	return ($row_RS); mysqli_free_result($RS);
 }
-function genSelect($nom=NULL, $RS, $sel=NULL, $class=NULL, $opt=NULL, $id=NULL, $placeHolder=NULL, $showIni=TRUE, $valIni=NULL, $nomIni="Select"){//v.4.0
+function genSelect($nom=NULL, $RS, $sel=NULL, $class=NULL, $opt=NULL, $id=NULL, $placeHolder=NULL, $showIni=TRUE, $valIni=NULL, $nomIni="Select"){//duotics_lib->v.4.1
+	$dRS=null;
+	$grpAct=null;
+	$grpSel=null;
+	$banG=false;
 	if($RS){
 	$dRS = mysqli_fetch_assoc($RS);
 	$tRS = mysqli_num_rows($RS);
-		
 	if(!isset($id))$id=$nom;
 	if (!$nom) $nom="select";
 	echo '<select name="'.$nom.'" id="'.$id.'" class="'.$class.'" data-placeholder="'.$placeHolder.'" '.$opt.'>';
-	
+	//Show Ini Value
 	if($showIni==TRUE){
 		echo '<option value="'.$valIni.'"';
 		if (!$sel) {echo "selected=\"selected\"";}
@@ -221,8 +225,8 @@ function genSelect($nom=NULL, $RS, $sel=NULL, $class=NULL, $opt=NULL, $id=NULL, 
 	
 	if($tRS>0){
 	do {
-		$grpAct=$dRS['sGRUP'];
-		if(($grpSel!=$grpAct)&&($grpAct)){		
+		if(isset($dRS['sGRUP'])) $grpAct=$dRS['sGRUP'];
+		if(($grpSel!=$grpAct)&&(isset($grpAct))){		
 			if($banG==true) echo '</optgroup>'; 
 			echo '<optgroup label="'.$dRS['sGRUP'].'">';
 			$grpSel=$grpAct;
@@ -242,7 +246,6 @@ function genSelect($nom=NULL, $RS, $sel=NULL, $class=NULL, $opt=NULL, $id=NULL, 
 	}
 	}
 	echo '</select>';
-	
 	mysqli_free_result($RS);
 	}else{
 		echo '<span class="label label-danger">Error genSelect : '.$nom.'</span>';

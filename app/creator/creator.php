@@ -8,12 +8,33 @@ include(RAIZf.'nav.php'); ?>
     <h1 class="mb-4">Creadores de Contenido Populares</h1>
     <div class="card mb-4">
         <div class="card-body">
-            Filtros
+        <div class="row g-3">
+        <div class="col-sm-5">
+            
+            <?php genSelect('lc', $RSlp, $idc, 'form-control', NULL, 'listPaises', NULL, TRUE, NULL, "Todos"); ?>
+           
+        </div>
+        <div class="col-sm-5">
+            
+            <?php genSelect('lg', $RSlg, $idg, 'form-control', NULL, 'listGames', NULL, TRUE, NULL, "Todos"); ?>
+            
+        </div>
+        <div class="col-sm-2">
+            <select class="form-control" id="selSort">
+				<option value="top" <?php if($ids=='top') echo 'selected' ?>>Mas populares</option>
+				<option value="brand" <?php if($ids=='min') echo 'selected' ?>>Menos populares</option>
+				<option value="az" <?php if($ids=='az') echo 'selected' ?>>A-Z</option>
+				<option value="za" <?php if($ids=='za') echo 'selected' ?>>Z-A</option>
+                <option value="new" <?php if($ids=='new') echo 'selected' ?>>Nuevos perfiles</option>
+			</select>
+        </div>
+        </div>
+            
         </div>
     </div>
     <div class="bg-white">
         <div class="container p-4">
-            <div class="row row-cols-1 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-4">
+            <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-4">
             <?php do{ ?>
             <div class="col">
             <a href="<?php echo $RAIZ.$dRSst['url'] ?>" style="text-decoration:none" class="text-dark">
@@ -34,4 +55,20 @@ include(RAIZf.'nav.php'); ?>
     </div>
     </div>
 </div>
+<script>
+// In your Javascript (external .js resource or <script> tag)
+$(document).ready(function() {
+    $('#listGames').select2();
+    $('#listPaises').select2();
+    $('#listGames').change(function(){
+			var url=RAIZ+'products/'+'autorefractor'+'/'+$('#selBrand').val()+'/'+$('#selSort').val();
+			location.href=url;
+		});
+		/*
+        $('#selSort').change(function(){
+			var url=RAIZ+'products/'+'autorefractor'+'/'+$('#selBrand').val()+'/'+$('#selSort').val();
+			location.href=url;
+		});*/
+});
+</script>
 <?php require(RAIZf.'foot.php'); ?>

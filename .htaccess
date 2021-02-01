@@ -13,10 +13,27 @@ RewriteRule ^profile$ app/profile/profile.php [L]
 RewriteRule ^profile/$ app/profile/profile.php [L]
 
 # DIRECTORY CREATOR
-RewriteRule ^creators$ app/creator/creator.php [L]
-RewriteRule ^creators/$ app/creator/creator.php [L]
-RewriteRule ^creadores$ app/creator/creator.php [L]
-RewriteRule ^creadores/$ app/creator/creator.php [L]
+#RewriteRule ^creators$ app/creator/creator.php [L]
+#RewriteRule ^creators/$ app/creator/creator.php [L]
+#RewriteRule ^creadores$ app/creator/creator.php [L]
+#RewriteRule ^creadores/$ app/creator/creator.php [L]
+
+# DIRECTORY CREATOR
+#RewriteRule ^creators/(.+)/?$ app/creator/creator.php?idc=$1
+#RewriteRule ^creators/(.+)?$ app/creator/creator.php?idc=$1
+#RewriteRule ^creadores/(.+)/?$ app/creator/creator.php?idc=$1
+#RewriteRule ^creadores/(.+)?$ app/creator/creator.php?idc=$1
+
+#RewriteRule ^creators/(.+)/(.+)/?$ app/creator/creator.php?idc=$1&idg=$2
+#RewriteRule ^creators/(.+)/(.+)?$ app/creator/creator.php?idc=$1&idg=$2
+#RewriteRule ^creadores/(.+)/(.+)/?$ app/creator/creator.php?idc=$1&idg=$2
+#RewriteRule ^creadores/(.+)/(.+)?$ app/creator/creator.php?idc=$1&idg=$2
+
+RewriteRule ^creators/(.+)/(.+)/(.+)/?$ app/creator/creator.php?idc=$1&idg=$2&s=$3 [L]
+RewriteRule ^creators/(.+)/(.+)/(.+)?$ app/creator/creator.php?idc=$1&idg=$2&s=$3 [L]
+RewriteRule ^creators/(.+)/(.+)?$ app/creator/creator.php?idc=$1&idg=$2 [L]
+RewriteRule ^creators/(.+)?$ app/creator/creator.php?idc=$1 [L]
+RewriteRule ^creators/?$ app/creator/creator.php [L]
 
 # DIRECTORY GAMES
 RewriteRule ^games$ app/game/game.php [L]
