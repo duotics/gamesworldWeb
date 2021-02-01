@@ -1,5 +1,6 @@
 <?php require('../../init.php');
 include('gamed.fnc.php');
+$body['tit']=$row['name'];
 include(RAIZf.'head.php');
 require(RAIZf.'nav.php');
 ?>
