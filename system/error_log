@@ -1,4 +1,0 @@
-[25-Jan-2021 16:44:21 America/Chicago] PHP Warning:  parse_ini_file(RAIZslang/en.ini): failed to open stream: No such file or directory in /home1/gamesworld/public_html/system/lang.php on line 5
-[25-Jan-2021 16:44:21 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home1/gamesworld/public_html/system/lang.php on line 6
-[26-Jan-2021 10:33:44 America/Chicago] PHP Warning:  parse_ini_file(RAIZslang/en.ini): failed to open stream: No such file or directory in /home1/gamesworld/public_html/system/lang.php on line 5
-[26-Jan-2021 10:33:44 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home1/gamesworld/public_html/system/lang.php on line 6
