@@ -1,6 +1,7 @@
 <?php require('../../init.php');
 include('creator.fnc.php');
 include('creator.css.php');
+$body['tit']="Creadores de Contenido";
 include(RAIZf . 'head.php');
 include(RAIZf . 'nav.php'); ?>
 <div class="bg-animate">

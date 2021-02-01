@@ -1,5 +1,6 @@
 <?php require('../../init.php');
 include('game.fnc.php');
+$body['tit']="Videojuegos";
 include(RAIZf.'head.php');
 include(RAIZf.'nav.php'); ?>
 <div class="container">
