@@ -49,8 +49,6 @@ $RSst = mysqli_query($conn,$qST) or die(mysqli_error($conn));
 $dRSst = mysqli_fetch_assoc($RSst);
 $tRSst = mysqli_num_rows($RSst);
 
-//echo $qST;
-
 $qLP=sprintf("select DISTINCT LCASE(tbl_country.iso) as sID, tbl_country.nicename as sVAL 
 FROM tbl_country INNER JOIN tbl_profile 
 ON tbl_country.idc = tbl_profile.idc
