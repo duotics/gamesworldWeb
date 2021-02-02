@@ -8,14 +8,6 @@ Header always set Content-Security-Policy "upgrade-insecure-requests;"
 # INDEX
 RewriteRule ^index.php$ app/home/index.php [L]
 
-# SEARCH
-RewriteRule ^search$ app/search/search.php [L]
-RewriteRule ^search/$ app/search/search.php [L]
-
-# PROFILE
-RewriteRule ^profile$ app/profile/profile.php [L]
-RewriteRule ^profile/$ app/profile/profile.php [L]
-
 # DIRECTORY CREATOR
 #RewriteRule ^creators$ app/creator/creator.php [L]
 #RewriteRule ^creators/$ app/creator/creator.php [L]
@@ -45,20 +37,26 @@ RewriteRule ^games/$ app/game/game.php [L]
 RewriteRule ^videojuegos$ app/game/game.php [L]
 RewriteRule ^videojuegos/$ app/game/game.php [L]
 
-# DIRECTORY NETWORKS
-RewriteRule ^networks$ app/network/network.php [L]
-RewriteRule ^networks/$ app/network/network.php [L]
-RewriteRule ^redes$ app/network/network.php [L]
-RewriteRule ^redes/$ app/network/network.php [L]
+# PAGE GAME
+RewriteRule ^game/(.+)/?$ app/game/gamed.php?game=$1
+RewriteRule ^game/(.+)?$ app/game/gamed.php?game=$1
+
+# SEARCH
+RewriteRule ^search$ app/search/search.php [L]
+RewriteRule ^search/$ app/search/search.php [L]
 
 # SEARCH
 RewriteRule ^search/(.+)/?$ app/search/search.php?str=$1
 RewriteRule ^search/(.+)?$ app/search/search.php?str=$1
 
+# profile
+RewriteRule ^profile$ app/profile/profile.php [L]
+RewriteRule ^profile/$ app/profile/profile.php [L]
+
+# profile
+RewriteRule ^profile/(.+)/?$ app/profile/profile.php?idp=$1
+RewriteRule ^profile/(.+)?$ app/profile/profile.php?idp=$1
+
 # PAGE CREATOR
 RewriteRule ^([a-zA-Z0-9]+)$ app/page/page.php?url=$1
 RewriteRule ^([a-zA-Z0-9]+)/$ app/page/page.php?url=$1
-
-# PAGE GAME
-RewriteRule ^game/(.+)/?$ app/game/gamed.php?game=$1
-RewriteRule ^game/(.+)?$ app/game/gamed.php?game=$1
