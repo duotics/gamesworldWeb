@@ -18,7 +18,7 @@ function getBtnGame($dG,$css=null){
 
 function getBtnNetwork($dN,$css=null){
 	$btn=null;
-	$btn='<a href="'.$dN['url'].'" class="btn btn-'.$dN['css'].' '.$css.' btn-lg" style="background:'.$dN['color'].'" target="black">
+	$btn='<a href="'.$dN['url'].'" class="btn btn-'.$dN['css'].' '.$css.' btn-lg" style="background:'.$dN['color'].'" target="black" id="idn-'.$dN['idn'].'">
 	<i class="'.$dN['icon'].' fa-2x"></i><br>';
 	$btn.=$dN['username'];
 	$btn.='</a>';
@@ -110,6 +110,7 @@ function updHitsH($paramRef,$paramSec){//v.0.1
 //EXAMPLE
 //Datos de una TABLA / CAMPO / CONDICION
 function totRows($table,$field,$param){
+	Global $conn;
 	$qry = sprintf("SELECT COUNT(*) as TR FROM %s WHERE %s = %s",
 	SSQL($table, ''),
 	SSQL($field, ''),
@@ -194,7 +195,8 @@ function detRowGSelNP($table,$fieldID,$fieldVal,$params,$ord=FALSE,$valOrd=NULL,
 	return ($RS); mysqli_free_result($RS);
 }
 /**/
-function detRowO($table,$field,$param,$fieldo,$order){ 
+function detRowO($table,$field,$param,$fieldo,$order){
+	Global $conn;
 	$qry = sprintf("SELECT * FROM %s WHERE %s = %s ORDER BY %s %s",
 	SSQL($table, ''),
 	SSQL($field, ''),
