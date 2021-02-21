@@ -10,7 +10,7 @@
                             </tr>
                             <tr>
                                 <td>Pais</td>
-                                <td><span class="ml-2 flag-icon flag-icon-<?php echo $row['pais'] ?>"></span></td>
+                                <td><span class="ml-2 flag-icon flag-icon-<?php echo $dC_flag ?>"></span></td>
                             </tr>
                             <tr>
                                 <td>Bio</td>

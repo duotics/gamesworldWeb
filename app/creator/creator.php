@@ -43,13 +43,14 @@ include(RAIZf . 'nav.php'); ?>
             <?php if ($tRSst > 0) { ?>
                 <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-4">
                     <?php do { ?>
+                    <?php $dC_flag=strtolower($dRSst['iso']); ?>
                         <div class="col">
                             <a href="<?php echo $RAIZ . $dRSst['url'] ?>" style="text-decoration:none" class="text-dark">
                                 <div class="card h-100 cont-view-streamer">
                                     <img src="<?php echo $RAIZd . 'logos/' . $dRSst['logo'] ?>" class="card-img-top img-streamer" alt="<?php echo $dRSst['name'] ?>">
                                     <div class="card-body text-center">
                                         <p class="card-text">
-                                            <span class="ml-2 flag-icon flag-icon-<?php echo $dRSst['pais'] ?>"></span>
+                                            <span class="ml-2 flag-icon flag-icon-<?php echo $dC_flag ?>"></span>
                                             <?php echo $dRSst['name'] ?>
                                         </p>
                                     </div>

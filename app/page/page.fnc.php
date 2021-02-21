@@ -5,6 +5,10 @@ if($url){
     $row=detRow('tbl_profile','url',$url);
     if($row){
         $view=TRUE;
+
+        $dC=detRow('tbl_country','idc',$row['idc']);
+        $dC_flag=strtolower($dC['iso']);
+        
         $qlN=sprintf("SELECT * FROM tbl_network 
         INNER JOIN tbl_network_tip ON tbl_network.idnt=tbl_network_tip.idnt
         WHERE idp=%s AND tipo=%s  ORDER BY ord ASC",
