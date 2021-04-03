@@ -55,11 +55,13 @@ body{
                 <div class="card-body">
                 <?php do{ ?>
                 <div class="card mb-2">
-                    <?php if($dRSlp['tit']){ ?>
+                    <?php if(isset($dRSlp['tit'])){ ?>
                     <h4 class="card-header"><?php echo $dRSlp['tit'] ?></h4>
-                        <?php } ?>
+                    <?php } ?>
                     <div class="card-body">
+                        <?php if(isset($dRSlp['cont'])){ ?>
                         <?php echo $dRSlp['cont'] ?>
+                        <?php } ?>
                     </div>
                 </div>
                 <?php }while($dRSlp = mysqli_fetch_assoc($RSlp)); ?>
@@ -73,11 +75,13 @@ body{
     <div class="container">
         <h1 class="display-5">Formas de apoyar al creador</h1>
         <div class="text-center animate__animated animate__backInUp animate__delay-1s">
+        <?php if($tRSld>0){ ?>
         <?php do{ ?>
         <span class="btn-sec-soc">
         <?php echo getBtnNetwork($dRSld,'m-4'); ?>
         </span>
         <?php }while($dRSld = mysqli_fetch_assoc($RSld)); ?>
+        <?php } ?>
         </div>
         </div>
     </div>
